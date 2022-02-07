@@ -1,0 +1,2 @@
+include ':app', "xCLCharts","library"
+rootProject.name = "BluetoothTool"

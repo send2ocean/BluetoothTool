@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 28
+
+    defaultConfig {
+        applicationId "com.fyts.bluetoothtool"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    //签名问题
+    signingConfigs {
+        release {
+            keyAlias 'key'
+            keyPassword '111111'
+            storeFile file('./bluetooth.jks')
+            storePassword '111111'
+        }
+        config {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('./debug.keystore')
+            storePassword 'android'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources false
+            debuggable true
+            //签名问题
+            signingConfig signingConfigs.release
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '28.0.3'
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.inuker.bluetooth:library:1.3.8'
+    //权限判断
+    implementation 'com.yanzhenjie:permission:1.1.2'
+    //刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-28'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
+    //Zxing
+    implementation 'com.google.zxing:core:3.3.1'
+    implementation 'com.journeyapps:zxing-android-embedded:3.3.0'
+    implementation project(':library')
+    implementation project(':xCLCharts')
+}

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.journeyapps.barcodescanner.BarcodeView
+        android:id="@+id/zxing_barcode_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.fyts.bluetoothtool.view.qrcode.ViewfinderView
+        android:id="@+id/zxing_viewfinder_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="#60000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#60000000" />
+
+            <RelativeLayout
+                android:layout_width="260dp"
+                android:layout_height="260dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="2dp"
+                            android:background="#FF07D8FF" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="#FF1A3F81" />
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="2dp"
+                            android:background="#FF07D8FF" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="10dp"
+                            android:background="#FF07D8FF" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="10dp"
+                            android:background="#FF07D8FF" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="240dp"
+                            android:background="#FF1A3F81" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="240dp"
+                            android:background="#FF1A3F81" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="10dp"
+                            android:background="#FF07D8FF" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="10dp"
+                            android:background="#FF07D8FF" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="2dp"
+                            android:background="#FF07D8FF" />
+
+                        <View
+                            android:layout_gravity="bottom"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="#FF1A3F81" />
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="2dp"
+                            android:background="#FF07D8FF" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/saomiao" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#60000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#60000000">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:text="扫描设备二维码，获取设备信息"
+                android:textColor="#90FFFFFF"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/zxing_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="扫描设备二维码，获取设备信息"
+            android:textColor="#90FFFFFF"
+            android:textSize="17sp" />
+    </LinearLayout>
+</RelativeLayout>

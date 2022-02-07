@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MessageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/appColor"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/back"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="收发数据"
+            android:textColor="@color/color_333333"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#e1e1e1" />
+
+
+    <com.fyts.bluetoothtool.view.ObservableScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_F4F5F9"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <EditText
+                    android:id="@+id/ed_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="请输入"
+                    android:padding="10dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/round_send"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp"
+                    android:text="发送"
+                    android:textColor="@color/withe"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:textStyle="bold"
+                android:paddingBottom="10dp"
+                android:text="接收列表"
+                android:textColor="@color/color_333333"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f4f5f9" />
+
+            <com.fyts.bluetoothtool.view.MaxHeightRecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                app:maxHeight="180dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="数据解析"
+                android:textColor="@color/color_333333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f4f5f9" />
+
+            <TextView
+                android:id="@+id/tv_voltage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="信号电压值："
+                android:textColor="@color/color_333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_concentration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="浓度："
+                android:textColor="@color/color_333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="温度："
+                android:textColor="@color/color_333333"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f4f5f9" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="电压"
+                android:textColor="@color/color_333333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f4f5f9" />
+
+            <com.fyts.bluetoothtool.view.chart.LineChart01View
+                android:id="@+id/chart_voltage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="浓度"
+                android:textColor="@color/color_333333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f4f5f9" />
+
+            <com.fyts.bluetoothtool.view.chart.LineChart01View
+                android:id="@+id/chart_concentration"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="温度"
+                android:textColor="@color/color_333333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f4f5f9" />
+
+            <com.fyts.bluetoothtool.view.chart.LineChart01View
+                android:id="@+id/chart_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/withe"
+                android:paddingTop="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_voltage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:nestedScrollingEnabled="true" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_concentration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_temperature"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.fyts.bluetoothtool.view.ObservableScrollView>
+
+    <View style="@style/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_read"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_send"
+            android:gravity="center"
+            android:text="读取"
+            android:textColor="@color/withe"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_write"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_send"
+            android:gravity="center"
+            android:text="写入"
+            android:textColor="@color/withe"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>
